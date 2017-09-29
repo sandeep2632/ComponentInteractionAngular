@@ -1,0 +1,27 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  serverElements = [{type:'server',name:'TestServer',content:'Thi is Test Server'}];
+  
+  
+  onServerAdded(eventdata:{name:string,content:string}) {
+    this.serverElements.push({
+      type: 'server',
+      name: eventdata.name,
+      content: eventdata.content
+    });
+  }
+
+  onBlueprintAdded(eventdata:{name:string,content:string}) {
+    this.serverElements.push({
+      type: 'blueprint',
+     name: eventdata.name,
+      content: eventdata.content
+    });
+  }
+}
